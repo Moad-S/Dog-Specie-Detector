@@ -5,7 +5,7 @@
   <p align="center">
     A simple program that detects various dog species using AI and Neural Networks
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ultralytics/yolov5"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
@@ -52,7 +52,6 @@
 
 This is a simple AI program that detects the type of dog species thrown at it, which includes 120 dog species and thousands of images as training sets.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -60,7 +59,6 @@ This is a simple AI program that detects the type of dog species thrown at it, w
 
  [![Python][Python.com]][Python-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -70,38 +68,51 @@ This is a simple AI program that detects the type of dog species thrown at it, w
 The following instructions will help you install the program and get it running locally
 ### Prerequisites
 
-This is a list of things needed to install before using the software
-* npm
-  ```sh
-  npm install npm@latest -g
+A lits of things to consider before using the program
+
+* Cloning the Yolov5 repository
+  ```python
+  git clone https://github.com/ultralytics/yolov5
   ```
+* Beware of changing file names and model names as it can mess with the program as the pre-trained model is already up on the repository, Ex: dog.yaml...
 
-### Installation
-"Example:"
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+### How to use
+1. Clone the repo
+   ```python
+   git clone https://github.com/Moad-S/Dog-Specie-Detector.git
+ 
+2. Example of how the file structure should look like.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+   ![image](https://user-images.githubusercontent.com/75837889/184492699-f1ad9b09-46fb-4f3d-ba42-89269fb5f4ff.png)
+
+
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project can be used as a guide on how neural networks work in conjuction with image detection. *Show screenshots, examples and more details*
+This project can be used as a guide on how neural networks work in conjuction with image detection. 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+1. We firstly train the model using randomised weights
+   ```python
+   %cd yolov5
+   !python train.py --img 640 --batch 32 --epochs 30 --data dog.yaml --weights '' --cfg yolov5s.yaml 
+   
+2. We continue training the pre-trained model for better results
+
+3. We then use the detection command after the training is complete 
+
+   ```python
+   !python /content/yolov5/detect.py --weights /content/best.pt --img 640 --conf 0.15 --source /content/doggus/Untitled4.jpg
+
+   
+
+![alt text](https://cdn.discordapp.com/attachments/901469400689954866/1005600199684665374/unknown.png)
+
+
+![alt text](https://media.discordapp.net/attachments/901469400689954866/1005600199353323530/unknown.png?width=358&height=675)
+
 
 
 
@@ -110,11 +121,10 @@ This project can be used as a guide on how neural networks work in conjuction wi
 
 - [x] Finishing the code
 - [x] Training
-- [ ] Comparison
-    - [ ] Get higher accuracy 
+- [x] Comparison
+    - [x] Get higher accuracy 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -126,13 +136,7 @@ Contributions are what make the open source community such an amazing place to l
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b "added later"`)
-3. Commit your Changes (`git commit -m 'Add "added later"'`)
-4. Push to the Branch (`git push origin "added later"`)
-5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -143,9 +147,8 @@ Don't forget to give the project a star! Thanks again!
 
 Name - Moad Sati - saatimoad@yahoo.fr
 
-Project Link: ["link"](https://github.com/github_username/repo_name)
+Project Link: ["link"](https://github.com/Moad-S/Dog-Specie-Detector.git)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
